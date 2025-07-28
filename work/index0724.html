@@ -1,105 +1,114 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ki">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project Room</title>
-    <!-- CSS 파일 -->
-    <link rel="stylesheet" href="index.css">
-    <!-- 구글 폰트 : Noto Sans KR, Dokdo -->
-    <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <!-- 파비콘 -->
-    <link rel="icon" type="image/x-icon" href="./work/images/favicon.ico">
+    <title>var, let, const, typeof, datatype</title>
 </head>
+
 <body>
-    <!-- 헤더 -->
-    <header id="main-header">
-        <h1>My project room</h1>
-        <p>이 저장소는 과제 및 연습자료 용도로 사용되고 있습니다.</p>
-    </header>
 
-    <!-- 내비게이션 -->
-    <nav id="main-nav">
-        <ul class="navi">
-            <li><a href="#">홈</a></li>
-            <li><a href="#">과제</a></li>
-            <li><a href="#">일상</a></li>
-            <li><a href="#">게임</a></li>
-            <li><a href="#">기타</a></li>
-        </ul>
-    </nav>
+    <h2>변수 let,var 사용 계산하기</h2>
 
-    <!-- 메인 컨테이너 -->
-    <main class="container">
-        <p class="webfont">아래 링크를 클릭하여 각 과제 페이지로 이동하세요.</p>
-        <h2>과제 목록</h2>
-        <table>
-            <colgroup>
-                <col class="col1">
-                <col class="col2">
-                <col class="col3">
-                <col class="col4">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>차수</th>
-                    <th>날짜</th>
-                    <th>과제명</th>
-                    <th>링크</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1차</td>
-                    <td>07/16</td>
-                    <td>day01_0716(훈련전)</td>
-                    <td><a href="./work/index0716.html" target="_blank">0716</a></td>
-                </tr>
-                <tr>
-                    <td>2차</td>
-                    <td>07/17</td>
-                    <td>day02_0717(훈련전)</td>
-                    <td><a href="./work/index0717.html" target="_blank">0717</a></td>
-                </tr>
-                <tr>
-                    <td>3차</td>
-                    <td>07/18</td>
-                    <td>블루베리</td>
-                    <td><a href="./work/index0718.html" target="_blank">0718</a></td>
-                </tr>
-                <tr>
-                    <td>4차</td>
-                    <td>07/21</td>
-                    <td>훈련찾기(미완성)</td>
-                    <td><a href="./work/index0721.html" target="_blank">0721</a></td>
-                </tr>
-                <tr>
-                    <td>5차</td>
-                    <td>07/22</td>
-                    <td>회원가입</td>
-                    <td><a href="./work/index0722.html" target="_blank">0722</a></td>
-                </tr>
-                <tr>
-                    <td>6차</td>
-                    <td>07/23</td>
-                    <td>깃허브 인덱스</td>
-                    <td><a href="./work/index0723.html" target="_blank">0723</a></td>
-                </tr>
-                <tr>
-                    <td>7차</td>
-                    <td>07/24</td>
-                    <td>깃허브 인덱스(레이아웃 수정 미완성)</td>
-                    <td><a href="./work/index0724.html" target="_blank">0724</a></td>
-                </tr>
-                <tr>
-                    <td>8차</td>
-                    <td>07/25</td>
-                    <td>그리드 템플릿,미디어쿼리 사용한 시멘틱 나누기</td>
-                    <td><a href="./work/index0725.html" target="_blank">0725</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="spacer"></div>
-    </main>
+    <h3>// 선언부</h3>
+    <p>// let width 너비를 저장할 변수 선언</p>
+    <p>// let height 너비를 저장할 변수 선언<br></p>
+
+    <h3>// 구현부</h3>
+    <p>// width = 200; 변수에 값 대입</p>
+    <p id="width">결과값</p>
+    <p>// height = 50; 변수에 값 대입</p>
+    <p id="height">결과값</p>
+    <p>// var area = width * height; 변수 선언과 동시에 계산 결괏갑 대입<br></p>
+
+    <h3>// 출력부</h3>
+    <p>//console.log(area) 결과값을 콘솔에 출력</p>
+    <p id="area">결과값<br></p>
+
+    <h2>상수 사용</h2>
+    <h3>// 선언부</h3>
+    <p>//const PI = 3.14; 원주율을 상수로 선언</p>
+    <p id="pi">결과값<br></p>
+    <p> //let radius = prompt("반지름을 입력하세요."); 반지름값 입력 받기</p>
+    <p id="radius">결과값<br></p>
+    <h3>// 구현부</h3>
+    <p> //var area2 = PI * radius * radius; 변수를 사용해 원의 넓이 계산</p>
+    <h3>// 출력부</h3>
+    <p id="area2">결과값<br></p>
+    <p>//console.log(area2) 원의 넓이 출력</p>
+    <h2>Type of</h2>
+    <p id="num1">결과값</p>
+    <p id="big1">결과값</p>
+    <p id="text1">결과값</p>
+    <p id="text2">결과값</p>
+    <p id="true1">결과값</p>
+    <p id="seasons1">결과값</p>
+    <p id="date1">결과값</p>
+    <p id="undef1">결과값</p>
+
+    <script>
+        //선언
+        let width;
+        let height;
+        //구현
+        width = 200;
+        document.getElementById("width").innerHTML = `너비는 ${width}로 할당되었습니다.`;
+        height = 50;
+        document.getElementById("height").innerHTML = `높이는 ${height}로 할당되었습니다.`;
+        var area = width * height
+        document.getElementById("area").innerHTML = `계산결과 면적은 ${area}입니다.`;
+        //출력
+        console.log(area);
+
+        //상수
+        //선언
+        const PI = 3.14;
+        document.getElementById("pi").innerHTML = `PI는 ${PI}로 할당되었습니다.`;
+         let radius = prompt("반지름을 입력하세요");
+        document.getElementById("radius").innerHTML = `반지름은 ${radius}로 할당되었습니다.`;
+        //구현
+        var area2 = PI * radius * radius;
+        //출력
+        console.log(area2);
+        document.getElementById("area2").innerHTML = `계산결과 면적은 ${area2}입니다.`;
+
+
+        //자료형
+        //선언 및 출력
+        let num1 = 2000;
+        let typ1 = typeof num1;
+        document.getElementById("num1").innerHTML = `${num1}의 자료형은 ${typ1}입니다. `;
+
+        let big1 = 56046506n;
+        let typ2 = typeof big1;
+        document.getElementById("big1").innerHTML = `${big1}의 자료형은 ${typ2}입니다. `;
+
+        let text1 = "Hello!";
+        let typ3 = typeof text1;
+        document.getElementById("text1").innerHTML = `${text1}의 자료형은 ${typ3}입니다. `;
+
+        let text2 = 'abcd';
+        let typ4 = typeof text2;
+        document.getElementById("text2").innerHTML = `${text2}의 자료형은 ${typ4}입니다. `;
+
+        let true1 = true;
+        let typ5 = typeof true1;
+        document.getElementById("true1").innerHTML = `${true}의 자료형은 ${typ5}입니다. `;
+
+        let seasons1 = ['봄', '여름', '가을', '겨울'];
+        let typ6 = typeof seasons1;
+        document.getElementById("seasons1").innerHTML = `${seasons1}의 자료형은 ${typ6}입니다. `;
+
+        let date1 = new Date();
+        let typ7 = typeof date1;
+        document.getElementById("date1").innerHTML = `${date1}의 자료형은 ${typ7}입니다. `;
+
+        let undef1;
+        let typ8 = typeof undef1;
+        document.getElementById("undef1").innerHTML = `${undef1}의 자료형은 ${typ8}입니다. `;
+
+    </script>
 </body>
+
 </html>
