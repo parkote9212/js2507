@@ -24,9 +24,9 @@ let text;
 let myTxt
 text = Math.random();
 if (text > 0.5) {
-    document.getElementById("demo").innerHTML = `<img src="./img/coinFront.png" alt="동전앞면">`;
+    document.getElementById("demo").innerHTML = `<img src="img/coinFront.png" alt="동전앞면">`;
 }
 else {
-    document.getElementById("demo").innerHTML = `<img src="./img/coinBack.png" alt="동전뒷면">`;
+    document.getElementById("demo").innerHTML = `<img src="img/coinBack.png" alt="동전뒷면">`;
 }
 
