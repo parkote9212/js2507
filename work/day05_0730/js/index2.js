@@ -19,6 +19,7 @@ else {
     greeting = "굿 귀가"
 }
 console.log(greeting);
+document.getElementById("time").innerHTML = `현재시간은 ${myHour}시이고 <br> 해야 할 일은 ${greeting}입니다.`;
 
 let text;
 let myTxt
