@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Setting a default value to a function parameter.</p>
+<p id = "demo"> </p>
+<script>
+    //함수 기본값
+    // function myFunction(x, y){
+    //     if (y === undefined){
+    //         y = 2;
+    //     }
+    //     return x * y;
+    // }
+//기본 매개변수 값
+function myFunction(x,y = 10){
+    return x + y;
+}
+    document.getElementById("demo").innerHTML =myFunction(5);
+</script>    
+</body>
+</html>
