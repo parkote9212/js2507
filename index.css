@@ -64,6 +64,7 @@ body {
     flex: 1;
     border-right: 1px solid #d1d1d1;
     text-align: center;
+    display: flex;
 }
 
 .navi li:last-child {
@@ -72,14 +73,21 @@ body {
 
 .navi a {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 7px; /* 아이콘과 텍스트 간격 */
     color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
+.navi a i {
+    font-size: 22px;
+    vertical-align: middle;
+    display: inline-block;
+}
 .navi a:hover,
 .navi a:focus {
     background-color: #eee;
