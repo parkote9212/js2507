@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-size: 2em;
+        }
+
+        #myDiv1,
+        #myDiv2 {
+            background-color: coral;
+            padding: 50px;
+        }
+
+        #myP1,
+        #myP2 {
+            background-color: white;
+            font-size: 20px;
+            border: 1px solid;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body onload="checkCookies()">
+    <h1> 이벤트 함수 클릭 </h1>
+    <h2 onclick="this.innerHTML='Ooops!1'">Click on this text!1</h2>
+
+    <h2 onclick="changeText(this)">Click on this text!2</h2>
+
+    <button onclick="displayDate()">The time is?</button>
+    <p id="time1">Time?</p>
+    <hr>
+    <h1> 쿠키 체크 </h1>
+    <p id="cookieCh">cookie Check</p>
+    <hr>
+
+    <h1> 입력 반응 이벤트 </h1>
+
+    Enter your name : <input type="text" id="fname" oninput="upperCase()">
+    <hr>
+
+    <h1> 마우스 이벤트 </h1>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color :tomato; width:120px; height:20px; padding:40px;">
+        Mouse Over me</div>
+    <hr>
+
+    <h1> 버튼 이벤트 </h1>
+    <button id="myBtn">Try it</button>
+    <p id="result1"></p>
+
+
+    <button id="myBtn2">Try it</button>
+    <p id="result2"></p>
+    <hr>
+
+    <h1> 화면 리사이징 </h1>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <hr>
+
+    <h1> 매개변수함수 호출 </h1>
+    <button id="myBtn3">Try it</button>
+    <p id="result5"></p>
+    <hr>
+
+    <h1>버블링 캡쳐링</h1>
+
+    <div id="myDiv1">
+        <h2>버블링:</h2>
+        <p id="myP1">안쪽부터 실행</p>
+    </div><br>
+
+    <div id="myDiv2">
+        <h2>캡처링:</h2>
+        <p id="myP2">바깥쪽부터 실행</p>
+    </div>
+
+
+    <script>
+        // onclick 이벤트
+        function changeText(id) {
+            id.innerHTML = "Ooops!2";
+        }
+        // onclick 이벤트
+        function displayDate() {
+            document.getElementById("time1").innerHTML = Date();
+        }
+        //쿠키 체크
+        function checkCookies() {
+            let text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled.";
+            }
+            else {
+                text = "Cookies are not enabled.";
+            }
+            document.getElementById("cookieCh").innerHTML = text;
+        }
+        // 입력된값 대문자로 고치기
+        function upperCase() {
+            const up = document.getElementById("fname");
+            up.value = up.value.toUpperCase();
+        }
+
+        // 마우스오버
+        function mOver(obj) {
+            obj.innerHTML = "Thank you"
+        }
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over me"
+        }
+
+
+
+        // 이벤트 리스너
+        // 즉시함수 사용
+        //     document.getElementById("myBtn").addEventListener("click", function() {
+        //   alert("Hello World!"); });
+        var z = document.getElementById("myBtn");
+        z.addEventListener("click", myFunction);
+        z.addEventListener("click", someOtherFunction);
+
+        function myFunction() {
+            alert("Hello World!");
+        }
+
+        function someOtherFunction() {
+            alert("This function was also executed!");
+        }
+
+        var za = document.getElementById("myBtn2");
+        za.addEventListener("mouseover", myMover);
+        za.addEventListener("click", myMclick);
+        za.addEventListener("mouseout", myMout);
+
+        function myMover() {
+            document.getElementById("result2").innerHTML +=
+                "Moused Over!<br>";
+        }
+
+        function myMclick() {
+            document.getElementById("result2").innerHTML +=
+                "Click!<br>";
+        }
+
+        function myMout() {
+            document.getElementById("result2").innerHTML +=
+                "Mouse out!<br>";
+        }
+        // 화면넓이에 따라 함수 실행
+        window.addEventListener("resize", function () {
+            document.getElementById("result3").innerHTML =
+                Math.random() + "<br>";
+            document.getElementById("result4").innerHTML =
+                window.innerWidth + "X" + window.innerHeight;
+        });
+
+        // 매개변수 사용 함수 호출
+        let p1 = 5;
+        let p2 = 7;
+        document.getElementById("myBtn3").addEventListener("click", function () {
+            myFun1(p1, p2);
+        });
+
+        function myFun1(a, b) {
+            document.getElementById("result5").innerHTML = a * b;
+        }
+        //버블링 캡처링
+        document.getElementById("myP1").addEventListener("click", function () {
+            alert("안쪽(하얀색) 이벤트 출력");
+        }, false);
+
+        document.getElementById("myDiv1").addEventListener("click", function () {
+            alert("바깥쪽(주황색) 이벤트 출력");
+        }, false);
+
+        document.getElementById("myP2").addEventListener("click", function () {
+            alert("안쪽(하얀색) 이벤트 출력");
+        }, true);
+
+        document.getElementById("myDiv2").addEventListener("click", function () {
+            alert("바깥쪽(주황색) 이벤트 출력");
+        }, true);
+    </script>
+</body>
+
+</html>

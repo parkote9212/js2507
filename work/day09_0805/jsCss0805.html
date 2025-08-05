@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+    <p id="p3">Hello World!</p>
+<button type="button"
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+    
+    <script>
+        let p1_fz = document.getElementById("p1").style;
+        let p2_color  =document.getElementById("p2").style.color;
+        p1_fz.fontSize = "2em";
+    </script>
+
+</body>
+
+</html>

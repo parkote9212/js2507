@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 신규 노드 만들기</h1>
+    <div id="div1">
+        <p id="p1">첫번쨰</p>
+        <p id="p2">두번째</p>
+    </div>
+    <hr>
+    <h1> insertBefore 사용해서 신규 노드 만들기</h1>
+    <div id="div2">
+        <p id="p3">다섯번쨰</p>
+        <p id="p4">여섯번째</p>
+    </div>
+    <hr>
+
+    <h1> remove 사용 기존 요소 및 자식 요소 제거 </h1>
+    <div id="div3">
+        <p id="reP1">일곱번쨰</p>
+        <p id="reP2">여덟번쨰-아래에 아홉번째 P(removeChild로 제거됨)</p>
+        <p id="reP3">아홉번쨰</p>
+    </div>
+      <button onclick="reEl()"> 요소 지우기</button>
+<hr>
+<h1> HTML 요소 교체 </h1>
+    <div id="div4">
+        <p id="reP4">교체될 요소</p>
+        <p id="reP5">일반 요소</p>
+    </div>
+
+    
+  
+    <script>
+        // 신규노드
+        // 엘리먼트 생성
+        const myP = document.createElement("p");
+        //id 추가
+        myP.id = "myId";
+        //class 추가
+        myP.classList.add("cls");
+        // 텍스트 노드 생성
+        const myTxt = document.createTextNode("세번째-신규");
+        // 엘리먼트에 자식추가
+        myP.appendChild(myTxt);
+        // 기존요소 찾기 및 할당
+        const div1 = document.getElementById("div1");
+        // 기존요소에 새요소를 자식으로 추가
+        div1.appendChild(myP);
+
+        //    InsertBefore 사용 노드 추가
+        const myP2 = document.createElement("p");
+        const myTxt2 = document.createTextNode("네번째-신규");
+        myP2.appendChild(myTxt2);
+
+        const div2 = document.getElementById("div2");
+        const child = document.getElementById("p3");
+        div2.insertBefore(myP2, child);
+
+//remove 사용 기존 요소 지우기
+function reEl(){
+    document.getElementById("reP1").remove();
+}
+
+// 자식 요소 지우기
+const par1 = document.getElementById("div3");
+const chi1 = document.getElementById("reP3");
+par1.removeChild(chi1);
+
+// 요소 교체
+
+const myP3 = document.createElement("p");
+const myTxt3 = document.createTextNode("교체한 요소");
+myP3.appendChild(myTxt3);
+
+const par2 = document.getElementById("div4");
+const chi2 = document.getElementById("reP4");
+par2.replaceChild(myP3,chi2);
+
+con
+</script>
+
+
+</body>
+
+</html>

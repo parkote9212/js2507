@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 단순입력 -->
+    <form name="myForm" action="#" onsubmit="return validateForm()" method="get">
+        Name: <input type="text" name="fname" value="Test">
+        <input type="submit" value="Submit">
+    </form>
+    <p>결과<hr></p>
+
+    
+    <!-- 1부터 10까지 입력하기 -->
+     <h2>1부터 10까지 입력하기</h2>
+<input id="numb">
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="result2"><hr></p>
+
+<!-- 필수입력 확인 -->
+ <h2>필수입력확인하기</h2>
+    <form action="#" method="get">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+        <hr>
+ 
+
+
+
+<!-- 외부 스크립트 사용 -->
+    <script src="./js/jsFrom0805.js"></script>
+</body>
+
+</html>
