@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>과제 게시판 객체만들기</h2>
+    <p>금일 과제의 날짜는 </p>
+    <p id="class1"></p>
+    <br>
+    <p>금일과제의 제목은</p>
+    <p id="class2"></p>
+    <br>
+    <p>금일 과목은</p>
+    <p id="course1"></p>
+    <br>
+    <p>실패:과제 객체를 바로 출력시도/금일 과목의 과제는</p>
+    <p id="course2"></p>
+    <br>
+    <p>금일 과목의 과제의 회차는</p>
+    <p id="result"></p>
+    <br>
+    <hr>
+    <pre>
+    코드
+   //과목함수 선언
+function Course(subject, content) {
+    this.name = subject;
+    this.content = content;
+}
+// 수업함수 선언
+function Class(date, round, title, link) {
+    this.date = date;
+    this.round = round;
+    this.title = title;
+    this.link = link;
+}
+// 수업 할당
+const class1 = new Class("0807", "11차", "JS,리액트사용 객체", "./index0807.html");
+document.getElementById("class1").innerHTML = class1.date;
+document.getElementById("class2").innerHTML = class1.title;
+
+//과목할당
+const course1 = new Course("JavaScript", class1);
+//과목의 이름은
+document.getElementById("course1").innerHTML = course1.name;
+//실패: 과목의 수업(배열)호출
+document.getElementById("course2").innerHTML = course1.content;
+//과목의 과제의 회차
+document.getElementById("result").innerHTML = course1.content.round;
+
+
+</pre>
+    <script src="./js/proRoom.js"></script>
+</body>
+
+</html>
