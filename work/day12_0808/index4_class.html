@@ -16,7 +16,7 @@
     this.carname = brand;
   }
   present() {
-    return 'I have a ' + this.carname;
+    return '브랜드는' + this.carname;
   }
 }
 // 
@@ -26,7 +26,7 @@ class Model extends Car {
     this.model = mod;
   }
   show() {
-    return this.present() + ', it is a ' + this.model;
+    return this.present() + '모델명은 ' + this.model;
   }
 }
 class Color extends Model{
@@ -35,11 +35,11 @@ class Color extends Model{
         this.color = color;
     }
      col() {
-    return this.show() + ', it is a ' + this.color;
+    return this.show() + ',색상은 ' + this.color;
   }
 }
 
-mycar = new Color("Ford", "Mustang","Red");
+mycar = new Color("현대", "아반떼","블랙");
 document.getElementById("brand").innerHTML = mycar.col();
     </script>
 
