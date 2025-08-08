@@ -2,46 +2,52 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <h3 id="brand"></h3>
 
 <body>
-    <script>
-       class Car {
-  constructor(brand) {
-    this.carname = brand;
-  }
-  present() {
-    return '브랜드는' + this.carname;
-  }
-}
-// 
-class Model extends Car {
-  constructor(brand, mod) {
-    super(brand);
-    this.model = mod;
-  }
-  show() {
-    return this.present() + '모델명은 ' + this.model;
-  }
-}
-class Color extends Model{
-    constructor(brand,mod,color){
-        super(brand,mod);
-        this.color = color;
+  <script>
+    class Car {
+      constructor(brand) {
+        this.carname = brand;
+      }
+      present() {
+        return '브랜드는 ' + this.carname;
+      }
     }
-     col() {
-    return this.show() + ',색상은 ' + this.color;
-  }
-}
+    // 
+    class Model extends Car {
+      constructor(brand, mod) {
+        super(brand);
+        this.model = mod;
+      }
+      show() {
+        return this.present() + ', 모델명은 ' + this.model;
+      }
+    }
+    class Color extends Model {
+      constructor(brand, mod, color, year) {
+        super(brand, mod);
+        this.color = color;
+        this.year = year;
+      }
+      age() {
+        const date = new Date();
+        return date.getFullYear() - this.year;
+      }
+      col() {
+        return this.show() + ', 색상은 ' + this.color +', 제작년도는 ' + this.year + ', 연식은 ' + this.age() + `년식입니다.`;
+      }
 
-mycar = new Color("현대", "아반떼","블랙");
-document.getElementById("brand").innerHTML = mycar.col();
-    </script>
+    }
+
+    mycar = new Color("현대", "아반떼", "블랙", 2014);
+    document.getElementById("brand").innerHTML = mycar.col();
+  </script>
 
 </body>
 
