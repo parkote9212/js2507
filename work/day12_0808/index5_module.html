@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<p id="result"></p>
+<p id="result2"></p>
+
+<body>
+    <script type="module">
+import message from "./js/message.js";
+import {name, age} from "./js/person.js";
+
+let text = "My name is " + name + ", I am " + age + ".";
+
+document.getElementById("result").innerHTML = text;
+
+document.getElementById("result2").innerHTML = message();
+
+    </script>
+
+</body>
+
+</html>

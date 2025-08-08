@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h3 id="brand"></h3>
+
+<body>
+    <script>
+       class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+// 
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+class Color extends Model{
+    constructor(brand,mod,color){
+        super(brand,mod);
+        this.color = color;
+    }
+     col() {
+    return this.show() + ', it is a ' + this.color;
+  }
+}
+
+mycar = new Color("Ford", "Mustang","Red");
+document.getElementById("brand").innerHTML = mycar.col();
+    </script>
+
+</body>
+
+</html>
